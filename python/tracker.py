@@ -5,6 +5,7 @@ import cv2  # Import opencv
 import os
 import numpy as np
 import matplotlib.pyplot as plt
+from dollarpy import Point
 
 
 class Tracker:
@@ -78,8 +79,8 @@ class Tracker:
                     self.mp_drawing.draw_landmarks(image, hand_landmarks, mp_hands.HAND_CONNECTIONS, self.mp_drawing_styles.get_default_hand_landmarks_style(
                     ), self.mp_drawing_styles.get_default_hand_connections_style())
                 for lm in results.multi_hand_landmarks:
-                    for landmark in lm.landmark:
-                        landmarks.append([landmark.x,landmark.y])
+                    for idx,landmark in enumerate( lm.landmark):
+                        landmarks.append(Point (landmark.x,landmark.y))
                         
 
                 cv2.imshow("label", image)
@@ -95,8 +96,8 @@ def main():
     print("start")
     # print(tracker.GetLandmarksFromVideo("C:\\Users\\Dell\Desktop\\deafSignAR\\python\\palm2.jpg",show=True))
     print(tracker.GetLandmarksFromImage(
-        "C:\\Users\\Dell\Desktop\\deafSignAR\\python\\A1.jpg"))
+        "C:\\Users\\Dell\Desktop\\deafSignAR\\python\\data\\B_test.jpg"))
     print("done")
 
 
-main()
+# main()
