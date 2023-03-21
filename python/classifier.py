@@ -11,6 +11,7 @@ class Classifier:
         pass
     def imagePathToTemplate(self,path):
         pass
+        
     def recognizePoints(self,points):
         return self.recognizer.recognize(points)
         
