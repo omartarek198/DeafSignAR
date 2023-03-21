@@ -58,9 +58,11 @@ namespace socketApp
                 string data = Encoding.UTF8.GetString(receiveBuffer.AsSpan(0, bytesReceived));
                 points = data.Split(",");
                 name = points[0];
-                if(points[1] == "Novice"){
+                if(points[1] == "Novice")
+                {
                     userLevel = Level.Novice;
-                }else{
+                }else
+                {
                     userLevel = Level.Intermediate;
                 }
                 
