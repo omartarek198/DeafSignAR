@@ -1,5 +1,7 @@
 import tracker
 import classifier
+import client
+import bluetoothConnection as bc
 import os
 
 import cv2
