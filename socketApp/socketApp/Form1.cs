@@ -12,23 +12,24 @@ namespace socketApp
 {
     public partial class Form1 : Form
     {
-        public int byteCount;
-        public NetworkStream stream;
-        public byte[] data2send;
-        public TcpClient tcpClient;
-        public string name ="";
-        public string userLevel = "";
-        public string[] points;
-        public System.Windows.Forms.Timer tt = new System.Windows.Forms.Timer();
-
-        public Bitmap off;
-
         public enum Level
         {
             Novice,
             Intermediate
            
         }
+        public int byteCount;
+        public NetworkStream stream;
+        public byte[] data2send;
+        public TcpClient tcpClient;
+        public string name ="";
+        public Level userLevel;
+        public string[] points;
+        public System.Windows.Forms.Timer tt = new System.Windows.Forms.Timer();
+
+        public Bitmap off;
+
+        
 
 
         public bool connectToSocket(String host, int portNumber)
@@ -57,7 +58,11 @@ namespace socketApp
                 string data = Encoding.UTF8.GetString(receiveBuffer.AsSpan(0, bytesReceived));
                 points = data.Split(",");
                 name = points[0];
-                userLevel = points[1];
+                if(points[1] == "Novice"){
+                    userLevel = Level.Novice;
+                }else{
+                    userLevel = Level.Intermediate;
+                }
                 
                 return true;
 
