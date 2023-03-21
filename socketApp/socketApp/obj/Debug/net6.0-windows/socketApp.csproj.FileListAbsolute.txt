@@ -15,3 +15,20 @@ C:\Users\fiedramo\source\repos\socketApp\socketApp\obj\Debug\net6.0-windows\refi
 C:\Users\fiedramo\source\repos\socketApp\socketApp\obj\Debug\net6.0-windows\socketApp.pdb
 C:\Users\fiedramo\source\repos\socketApp\socketApp\obj\Debug\net6.0-windows\socketApp.genruntimeconfig.cache
 C:\Users\fiedramo\source\repos\socketApp\socketApp\obj\Debug\net6.0-windows\ref\socketApp.dll
+C:\Users\fiedramo\Desktop\Spring 2023\Uni\CS484 - HCI\Proj - 21-3\DeafSignAR\socketApp\socketApp\bin\Debug\net6.0-windows\socketApp.exe
+C:\Users\fiedramo\Desktop\Spring 2023\Uni\CS484 - HCI\Proj - 21-3\DeafSignAR\socketApp\socketApp\bin\Debug\net6.0-windows\socketApp.deps.json
+C:\Users\fiedramo\Desktop\Spring 2023\Uni\CS484 - HCI\Proj - 21-3\DeafSignAR\socketApp\socketApp\bin\Debug\net6.0-windows\socketApp.runtimeconfig.json
+C:\Users\fiedramo\Desktop\Spring 2023\Uni\CS484 - HCI\Proj - 21-3\DeafSignAR\socketApp\socketApp\bin\Debug\net6.0-windows\socketApp.dll
+C:\Users\fiedramo\Desktop\Spring 2023\Uni\CS484 - HCI\Proj - 21-3\DeafSignAR\socketApp\socketApp\bin\Debug\net6.0-windows\socketApp.pdb
+C:\Users\fiedramo\Desktop\Spring 2023\Uni\CS484 - HCI\Proj - 21-3\DeafSignAR\socketApp\socketApp\obj\Debug\net6.0-windows\socketApp.csproj.AssemblyReference.cache
+C:\Users\fiedramo\Desktop\Spring 2023\Uni\CS484 - HCI\Proj - 21-3\DeafSignAR\socketApp\socketApp\obj\Debug\net6.0-windows\socketApp.Form1.resources
+C:\Users\fiedramo\Desktop\Spring 2023\Uni\CS484 - HCI\Proj - 21-3\DeafSignAR\socketApp\socketApp\obj\Debug\net6.0-windows\socketApp.csproj.GenerateResource.cache
+C:\Users\fiedramo\Desktop\Spring 2023\Uni\CS484 - HCI\Proj - 21-3\DeafSignAR\socketApp\socketApp\obj\Debug\net6.0-windows\socketApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fiedramo\Desktop\Spring 2023\Uni\CS484 - HCI\Proj - 21-3\DeafSignAR\socketApp\socketApp\obj\Debug\net6.0-windows\socketApp.AssemblyInfoInputs.cache
+C:\Users\fiedramo\Desktop\Spring 2023\Uni\CS484 - HCI\Proj - 21-3\DeafSignAR\socketApp\socketApp\obj\Debug\net6.0-windows\socketApp.AssemblyInfo.cs
+C:\Users\fiedramo\Desktop\Spring 2023\Uni\CS484 - HCI\Proj - 21-3\DeafSignAR\socketApp\socketApp\obj\Debug\net6.0-windows\socketApp.csproj.CoreCompileInputs.cache
+C:\Users\fiedramo\Desktop\Spring 2023\Uni\CS484 - HCI\Proj - 21-3\DeafSignAR\socketApp\socketApp\obj\Debug\net6.0-windows\socketApp.dll
+C:\Users\fiedramo\Desktop\Spring 2023\Uni\CS484 - HCI\Proj - 21-3\DeafSignAR\socketApp\socketApp\obj\Debug\net6.0-windows\refint\socketApp.dll
+C:\Users\fiedramo\Desktop\Spring 2023\Uni\CS484 - HCI\Proj - 21-3\DeafSignAR\socketApp\socketApp\obj\Debug\net6.0-windows\socketApp.pdb
+C:\Users\fiedramo\Desktop\Spring 2023\Uni\CS484 - HCI\Proj - 21-3\DeafSignAR\socketApp\socketApp\obj\Debug\net6.0-windows\socketApp.genruntimeconfig.cache
+C:\Users\fiedramo\Desktop\Spring 2023\Uni\CS484 - HCI\Proj - 21-3\DeafSignAR\socketApp\socketApp\obj\Debug\net6.0-windows\ref\socketApp.dll

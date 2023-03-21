@@ -7,13 +7,19 @@ class BluetoothConnection:
     def __init__(self):
         self.found_devices = []
         self.reg_devices = []
+        self.reg_names = []
+        self.reg_levels = []
         self.lines = []
+        self.msg2send = ""
 
     def get_devices(self):
         with open('devices.txt') as f:
             self.lines = f.readlines()
         for line in self.lines:
-            self.reg_devices.append(line.split(','))
+            addr, name, level = line.split(',')
+            self.reg_devices.append(addr)
+            self.reg_names.append(name)
+            self.reg_levels.append(level)
 
     def find_devices(self):
         nearby_devices = bluetooth.discover_devices(lookup_names=True)
@@ -28,22 +34,25 @@ class BluetoothConnection:
     
     def compare_devices(self):
         for device in self.found_devices:
-            for d in self.reg_devices:
-                print(d)
-                if device[0] == d[0][0]:
-                    print("Welcome %s", d[0][1])
+            ct = 0
+            if device[0] in self.reg_devices:
+                while ct < len(self.reg_devices):
+                    if device[0] == self.reg_devices[ct]:
+                        self.msg2send = self.reg_names[ct] + ","+ self.reg_levels[ct]
+                    ct += 1
+
 
 def main():
     bConn = BluetoothConnection()
     bConn.get_devices()
     bConn.find_devices()
+    bConn.compare_devices()
     # print(bConn.found_devices[0][0])
     mClient = Client(5000)
     # os.chdir("C:\\Users\\fiedramo\\source\\repos\\socketApp\\socketApp\\bin\\Debug\\net6.0-windows\\")
     # os.system(r"C:\Users\fiedramo\source\repos\socketApp\socketApp\bin\Debug\net6.0-windows\socketApp.exe")
     mClient.wait4msg()
     # os.startfile("C:\\Users\\fiedramo\\source\\repos\\socketApp\\socketApp\\bin\\Debug\\net6.0-windows\\socketApp.exe")
-    
-    mClient.sendmsg(bConn.found_devices[0][0])
+    mClient.sendmsg(bConn.msg2send)
 
 main()

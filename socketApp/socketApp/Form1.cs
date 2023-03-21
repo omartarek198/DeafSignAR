@@ -16,11 +16,19 @@ namespace socketApp
         public NetworkStream stream;
         public byte[] data2send;
         public TcpClient tcpClient;
-        public string text ="";
-
+        public string name ="";
+        public string userLevel = "";
+        public string[] points;
         public System.Windows.Forms.Timer tt = new System.Windows.Forms.Timer();
 
         public Bitmap off;
+
+        public enum Level
+        {
+            Novice,
+            Intermediate
+           
+        }
 
 
         public bool connectToSocket(String host, int portNumber)
@@ -47,9 +55,10 @@ namespace socketApp
                 byte[] receiveBuffer = new byte[1024];
                 int bytesReceived = stream.Read(receiveBuffer);
                 string data = Encoding.UTF8.GetString(receiveBuffer.AsSpan(0, bytesReceived));
-                //points = data.Split(",");
-                text = data;
-                Console.WriteLine(text);
+                points = data.Split(",");
+                name = points[0];
+                userLevel = points[1];
+                
                 return true;
 
 
@@ -125,7 +134,7 @@ namespace socketApp
         public void draw(Graphics g)
         {
             g.Clear(Color.White);
-            g.DrawString(text, new Font(FontFamily.GenericSansSerif, 30), Brushes.Black, new PointF(ClientSize.Width / 2, ClientSize.Height / 2));
+            g.DrawString(name + " " + userLevel, new Font(FontFamily.GenericSansSerif, 30), Brushes.Black, new PointF(ClientSize.Width / 2, ClientSize.Height / 2));
         }
         public void drawd(Graphics g)
         {
