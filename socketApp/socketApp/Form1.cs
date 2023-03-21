@@ -25,6 +25,7 @@ namespace socketApp
         public string name ="";
         public Level userLevel;
         public string[] points;
+        //public Process myprocess = new Process();
         public System.Windows.Forms.Timer tt = new System.Windows.Forms.Timer();
 
         public Bitmap off;
@@ -118,6 +119,7 @@ namespace socketApp
         private void Form1_Load(object? sender, EventArgs e)
         {
             connectToSocket("localhost", 5000);
+            
 
             off = new Bitmap(ClientSize.Width, ClientSize.Height);
             try
@@ -128,6 +130,24 @@ namespace socketApp
             {
 
             }
+            //myprocess.StartInfo = new ProcessStartInfo();
+            //myprocess.StartInfo.WorkingDirectory = "C:\\Users\\User\\Downloads\\TUIO11_NET-master\\bin\\Debug";
+            //myprocess.StartInfo.FileName = "TuioDemo.exe";
+
+            //off = new Bitmap(ClientSize.Width, ClientSize.Height);
+            //try
+            //{
+            //    recieveMessage();
+
+            //}
+            //catch
+            //{
+
+            //}
+            //drawd(CreateGraphics());
+            //await Task.Delay(5000);
+
+            //myprocess.Start();
             drawd(CreateGraphics());
 
         }
