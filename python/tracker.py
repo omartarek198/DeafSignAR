@@ -96,7 +96,7 @@ def main():
     print("start")
     # print(tracker.GetLandmarksFromVideo("C:\\Users\\Dell\Desktop\\deafSignAR\\python\\palm2.jpg",show=True))
     print(tracker.GetLandmarksFromImage(
-        "C:\\Users\\Dell\Desktop\\deafSignAR\\python\\data\\B_test.jpg"))
+        "data\\B_test.jpg"))
     print("done")
 
 
