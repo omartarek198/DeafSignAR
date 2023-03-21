@@ -1,7 +1,7 @@
 import tracker
 import classifier
 import client
-import bluetoothConnection as bc
+# import bluetoothConnection as bc
 import os
 from dollarpy import Point
 
@@ -36,6 +36,18 @@ def main():
     
 
 
+def add_text_to_image(image,letter,conf):
+    # Define the font and other properties of the text
+    font = cv2.FONT_HERSHEY_SIMPLEX
+    font_scale = 1
+    font_color = (255, 255, 255) # white
+    line_type = 2
+
+# Add the text to the image
+    cv2.putText(image, "Letter : " + letter, (0, 50), font, font_scale, font_color, line_type)
+    cv2.putText(image, "confidence : " + str(conf), (0, 100), font, font_scale, font_color, line_type)
+    
+    return image
 
 
 import cv2
@@ -94,7 +106,8 @@ def track_hands():
                         landmarks.append(Point (landmark.x,landmark.y))
                         
                     #Prediction is here    
-                print (brain.recognizePoints(landmarks))
+                pred =brain.recognizePoints(landmarks)
+                image = add_text_to_image(image=image,letter=pred[0],conf=pred[1])
 
                     
                 for hand_landmarks in results.multi_hand_landmarks:
@@ -103,6 +116,8 @@ def track_hands():
 
             # Show the image
             image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
+            
+            
             cv2.imshow('Hand Tracking', image)
 
             # Exit on ESC
