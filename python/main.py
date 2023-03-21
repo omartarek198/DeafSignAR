@@ -3,6 +3,8 @@ import classifier
 import client
 import bluetoothConnection as bc
 import os
+from dollarpy import Point
+
 
 import cv2
 import mediapipe as mp
@@ -11,7 +13,7 @@ mp_drawing_styles = mp.solutions.drawing_styles
 mp_hands = mp.solutions.hands
 
 def get_Image_Paths():
-    directories = os.listdir("python\data")
+    directories = os.listdir("data")
     return directories
 
 
@@ -24,7 +26,7 @@ def main():
     unrecognized = []
     for dir in dirs:
      points = extractor.GetLandmarksFromImage(
-        os.path.join("python\\data" + "\\" + dir))
+        os.path.join("data" + "\\" + dir))
      label = dir[0]
 
      if points is None:
@@ -40,12 +42,34 @@ import cv2
 import mediapipe as mp
 
 def track_hands():
+    
+    brain = classifier.Classifier()
+    extractor = tracker.Tracker()
+    dirs = get_Image_Paths()
+    unrecognized = []
+    for dir in dirs:
+     points = extractor.GetLandmarksFromImage(
+        os.path.join("data" + "\\" + dir))
+     label = dir[0]
+
+     if points is None:
+        unrecognized.append(label)
+        continue
+     if points is not None:
+        brain.pointsToTemplate(points=points, label=label)
+         
+         
+    
+    print (unrecognized)
+    
     # Initialize Mediapipe hands class
     mp_hands = mp.solutions.hands
 
     # Initialize camera capture
     cap = cv2.VideoCapture(0)
-
+   
+    
+    
     # Start capturing and processing frames
     with mp_hands.Hands(min_detection_confidence=0.5, min_tracking_confidence=0.5) as hands:
 
@@ -64,6 +88,15 @@ def track_hands():
 
             # Draw hand landmarks on the image
             if results.multi_hand_landmarks:
+                landmarks = []
+                for lm in results.multi_hand_landmarks:
+                    for idx,landmark in enumerate( lm.landmark):
+                        landmarks.append(Point (landmark.x,landmark.y))
+                        
+                    #Prediction is here    
+                print (brain.recognizePoints(landmarks))
+
+                    
                 for hand_landmarks in results.multi_hand_landmarks:
                     mp.solutions.drawing_utils.draw_landmarks(
                         image, hand_landmarks, mp_hands.HAND_CONNECTIONS)

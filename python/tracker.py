@@ -86,6 +86,31 @@ class Tracker:
                 cv2.imshow("label", image)
                 cv2.waitKey(10)
                 return landmarks
+    def GetLandmarksFromLiveImage(self, image):
+        mp_hands = mp.solutions.hands
+        landmarks = []
+
+    # For static images:
+        with mp_hands.Hands(
+            static_image_mode=True,
+            max_num_hands=1,
+
+                min_detection_confidence=0.5) as hands:
+            image = cv2.flip(image, 1)
+            results = hands.process(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
+            if results.multi_hand_landmarks is not None:
+                
+                for hand_landmarks in results.multi_hand_landmarks:
+                    self.mp_drawing.draw_landmarks(image, hand_landmarks, mp_hands.HAND_CONNECTIONS, self.mp_drawing_styles.get_default_hand_landmarks_style(
+                    ), self.mp_drawing_styles.get_default_hand_connections_style())
+                for lm in results.multi_hand_landmarks:
+                    for idx,landmark in enumerate( lm.landmark):
+                        landmarks.append(Point (landmark.x,landmark.y))
+                        
+
+                cv2.imshow("label", image)
+                cv2.waitKey(10)
+                return landmarks
 
     # def method2(self, arg3):
     #     pass
