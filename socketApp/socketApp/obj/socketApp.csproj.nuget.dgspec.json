@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\fiedramo\\source\\repos\\socketApp\\socketApp\\socketApp.csproj": {}
+    "C:\\Users\\fiedramo\\Desktop\\Spring 2023\\Uni\\CS484 - HCI\\Proj - 21-3\\DeafSignAR\\socketApp\\socketApp\\socketApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\fiedramo\\source\\repos\\socketApp\\socketApp\\socketApp.csproj": {
+    "C:\\Users\\fiedramo\\Desktop\\Spring 2023\\Uni\\CS484 - HCI\\Proj - 21-3\\DeafSignAR\\socketApp\\socketApp\\socketApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fiedramo\\source\\repos\\socketApp\\socketApp\\socketApp.csproj",
+        "projectUniqueName": "C:\\Users\\fiedramo\\Desktop\\Spring 2023\\Uni\\CS484 - HCI\\Proj - 21-3\\DeafSignAR\\socketApp\\socketApp\\socketApp.csproj",
         "projectName": "socketApp",
-        "projectPath": "C:\\Users\\fiedramo\\source\\repos\\socketApp\\socketApp\\socketApp.csproj",
+        "projectPath": "C:\\Users\\fiedramo\\Desktop\\Spring 2023\\Uni\\CS484 - HCI\\Proj - 21-3\\DeafSignAR\\socketApp\\socketApp\\socketApp.csproj",
         "packagesPath": "C:\\Users\\fiedramo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fiedramo\\source\\repos\\socketApp\\socketApp\\obj\\",
+        "outputPath": "C:\\Users\\fiedramo\\Desktop\\Spring 2023\\Uni\\CS484 - HCI\\Proj - 21-3\\DeafSignAR\\socketApp\\socketApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
